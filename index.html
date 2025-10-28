@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Henly - Pakistan's Poultry Marketplace" />
+    <meta property="og:title" content="Henly - Pakistan's Poultry Marketplace" />
+    <meta property="og:description" content="Pakistan's leading poultry marketplace connecting producers and consumers" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://henly.co" />
     <title>Henly - Pakistan's Poultry Marketplace</title>
+    <script>
+      // SPA routing fallback for GitHub Pages
+      (function() {
+        const redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      }());
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Henly - Pakistan's Poultry Marketplace</title>
+    <script type="text/javascript">
+      // GitHub Pages SPA routing workaround
+      // This redirects 404s to index.html which allows React Router to handle all routes
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      }());
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
