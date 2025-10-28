@@ -70,7 +70,7 @@ export default function ContactForm({ language }: ContactFormProps) {
       // For now, we'll simulate a successful submission
       setFormState('success');
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    } catch (error) {
+    } catch {
       setErrorMessage(isUrdu ? 'کوئی خرابی ہوئی۔ براہ کرم دوبارہ کوشش کریں' : 'An error occurred. Please try again');
       setFormState('error');
     }

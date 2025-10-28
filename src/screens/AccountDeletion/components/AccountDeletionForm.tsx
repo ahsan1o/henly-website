@@ -75,8 +75,8 @@ export default function AccountDeletionForm({ language }: AccountDeletionFormPro
         setFormState('success');
         setFormData({ email: '', phone: '', reason: '', confirmDeletion: false });
       }, 1000);
-    } catch (error) {
-      // In demo mode, still show success
+    } catch {
+      // In demo mode, still show success (error is expected in this flow)
       setTimeout(() => {
         setFormState('success');
         setFormData({ email: '', phone: '', reason: '', confirmDeletion: false });

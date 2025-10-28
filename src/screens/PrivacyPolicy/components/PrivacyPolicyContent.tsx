@@ -1,4 +1,4 @@
-import { ChevronDown, Lock, Mail, Phone, Shield, FileText } from 'lucide-react';
+import { ChevronDown, Lock, Mail, Phone, Shield, FileText, LucideIcon } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ interface Section {
   id: string;
   titleEn: string;
   titleUr: string;
-  icon?: any;
+  icon?: LucideIcon;
   subsections?: {
     titleEn: string;
     titleUr: string;
