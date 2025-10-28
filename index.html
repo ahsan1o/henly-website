@@ -11,12 +11,15 @@
     <meta property="og:url" content="https://henly.co" />
     <title>Henly - Pakistan's Poultry Marketplace</title>
     <script>
-      // SPA routing for GitHub Pages - handles redirects from 404.html
+      // Restore the original path from 404.html redirect
       (function() {
         var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
+        if (redirect) {
+          delete sessionStorage.redirect;
+          // Only restore if we're at index.html (not already processing)
+          if (location.pathname === '/index.html' || location.pathname === '/') {
+            history.replaceState(null, null, redirect);
+          }
         }
       }());
     </script>
