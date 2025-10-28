@@ -11,9 +11,9 @@
     <meta property="og:url" content="https://henly.co" />
     <title>Henly - Pakistan's Poultry Marketplace</title>
     <script>
-      // SPA routing fallback for GitHub Pages
+      // SPA routing for GitHub Pages - handles redirects from 404.html
       (function() {
-        const redirect = sessionStorage.redirect;
+        var redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
         if (redirect && redirect !== location.href) {
           history.replaceState(null, null, redirect);
