@@ -1,4 +1,4 @@
-import { ChevronDown, Lock, Mail, Phone, Shield, FileText, Trash2 } from 'lucide-react';
+import { ChevronDown, Lock, Mail, Phone, Shield, FileText } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

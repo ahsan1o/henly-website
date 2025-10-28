@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import { Phone, Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 
 interface ContactFormProps {
   language: 'en' | 'ur';

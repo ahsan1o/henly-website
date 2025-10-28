@@ -169,3 +169,60 @@ For questions or issues, contact:
 ---
 
 Built with ❤️ for Pakistan's Poultry Industry
+
+---
+
+## 🌐 Custom Domain Setup (henly.co)
+
+### Current Status
+✅ Website deployed to: **https://ahsan1o.github.io**
+
+### Steps to Connect henly.co
+
+#### Step 1: Verify Domain Ownership on GitHub
+1. Go to: https://github.com/settings/domains
+2. Click **"Add domain"**
+3. Enter: `henly.co`
+4. GitHub will provide a TXT record to add
+
+#### Step 2: Add TXT Record to GoDaddy DNS
+1. Log into GoDaddy: https://www.godaddy.com/account
+2. **My Products** → **henly.co** → **Manage DNS**
+3. Click **Add** new record
+   - Type: **TXT**
+   - Name: **@**
+   - Value: (GitHub will provide this)
+   - TTL: **1 hour**
+4. Click **Save**
+
+#### Step 3: Verify on GitHub
+After DNS propagation (5-10 minutes):
+1. Return to: https://github.com/settings/domains
+2. Click **Verify** next to henly.co
+3. After verification ✓, connect to your repository
+
+#### Step 4: Connect to GitHub Pages
+1. Go to: https://github.com/ahsan1o/henly-website/settings/pages
+2. Enter custom domain: `henly.co`
+3. Click **Save**
+4. Check **Enforce HTTPS** after DNS verification
+
+#### Step 5: Update GoDaddy DNS (Final)
+In GoDaddy DNS, add/update:
+
+**A Records** (4 total):
+- `185.199.108.153`
+- `185.199.109.153`
+- `185.199.110.153`
+- `185.199.111.153`
+
+**CNAME Record**:
+- Name: `www`
+- Value: `ahsan1o.github.io`
+
+---
+
+### Timeline
+- Now: Live at https://ahsan1o.github.io ✓
+- After domain verification: henly.co ready
+- Total: 24-48 hours for full DNS propagation
