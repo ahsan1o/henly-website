@@ -1,4 +1,5 @@
 import { Mail, Phone, Facebook, Twitter, Instagram, Linkedin, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { translations } from '../translations';
 
 interface FooterProps {
@@ -6,6 +7,7 @@ interface FooterProps {
 }
 
 export default function Footer({ language }: FooterProps) {
+  const navigate = useNavigate();
   const t = translations[language];
   const isUrdu = language === 'ur';
 
@@ -41,9 +43,28 @@ export default function Footer({ language }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="#privacy" className="text-gray-400 hover:text-[#8b0000] transition-colors">
+                <button 
+                  onClick={() => navigate('/contact')}
+                  className="text-gray-400 hover:text-[#8b0000] transition-colors cursor-pointer text-left"
+                >
+                  {t.contact}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/privacy')}
+                  className="text-gray-400 hover:text-[#8b0000] transition-colors cursor-pointer text-left"
+                >
                   {t.privacyPolicy}
-                </a>
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigate('/account-deletion')}
+                  className="text-gray-400 hover:text-[#8b0000] transition-colors cursor-pointer text-left"
+                >
+                  {isUrdu ? 'اکاؤنٹ حذفی' : 'Account Deletion'}
+                </button>
               </li>
               <li>
                 <a href="#terms" className="text-gray-400 hover:text-[#8b0000] transition-colors">
@@ -69,14 +90,14 @@ export default function Footer({ language }: FooterProps) {
             <ul className="space-y-3">
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#8b0000]" />
-                <a href="mailto:info@henly.pk" className="text-gray-400 hover:text-[#8b0000] transition-colors">
-                  info@henly.pk
+                <a href="mailto:henlycoo@gmail.com" className="text-gray-400 hover:text-[#8b0000] transition-colors">
+                  henlycoo@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#8b0000]" />
-                <a href="tel:+923001234567" className="text-gray-400 hover:text-[#8b0000] transition-colors">
-                  +92 300 1234567
+                <a href="tel:+923010900903" className="text-gray-400 hover:text-[#8b0000] transition-colors">
+                  +92-301-0900903
                 </a>
               </li>
             </ul>

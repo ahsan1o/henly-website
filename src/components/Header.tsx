@@ -1,5 +1,6 @@
-import { Menu, X, ChevronDown, Bird } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { translations } from '../translations';
 
 interface HeaderProps {
@@ -10,6 +11,7 @@ interface HeaderProps {
 export default function Header({ language, setLanguage }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const navigate = useNavigate();
   const t = translations[language];
   const isUrdu = language === 'ur';
 
@@ -93,9 +95,25 @@ export default function Header({ language, setLanguage }: HeaderProps) {
                     <a href="#news" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
                       {t.news}
                     </a>
-                    <a href="#contact" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                    <button
+                      onClick={() => navigate('/contact')}
+                      className="w-full text-left block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2"
+                    >
                       {t.contact}
-                    </a>
+                    </button>
+                    <div className="border-t border-gray-100 my-2"></div>
+                    <button
+                      onClick={() => navigate('/privacy')}
+                      className="w-full text-left block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2 mb-2"
+                    >
+                      {t.privacyPolicy}
+                    </button>
+                    <button
+                      onClick={() => navigate('/account-deletion')}
+                      className="w-full text-left block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2"
+                    >
+                      {isUrdu ? 'اکاؤنٹ حذفی' : 'Account Deletion'}
+                    </button>
                   </div>
                 )}
               </div>
@@ -156,9 +174,24 @@ export default function Header({ language, setLanguage }: HeaderProps) {
               <a href="#news" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
                 {t.news}
               </a>
-              <a href="#contact" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+              <button
+                onClick={() => navigate('/contact')}
+                className="block w-full text-left py-2 text-gray-700 hover:text-[#8b0000] font-medium"
+              >
                 {t.contact}
-              </a>
+              </button>
+              <button 
+                onClick={() => navigate('/privacy')}
+                className="block w-full text-left py-2 text-gray-700 hover:text-[#8b0000] font-medium"
+              >
+                {t.privacyPolicy}
+              </button>
+              <button 
+                onClick={() => navigate('/account-deletion')}
+                className="block w-full text-left py-2 text-gray-700 hover:text-[#8b0000] font-medium"
+              >
+                {isUrdu ? 'اکاؤنٹ حذفی' : 'Account Deletion'}
+              </button>
               <div className="pt-4 space-y-2">
                 <button className={`w-full py-2 border-2 border-[#8b0000] text-[#8b0000] rounded-lg hover:bg-[#8b0000] hover:text-white transition-all font-medium ${isUrdu ? 'font-urdu' : ''}`}>
                   {t.signIn}
