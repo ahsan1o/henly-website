@@ -1,0 +1,155 @@
+{
+  "pakistanLocations": [
+    {
+      "province": "Punjab",
+      "cities": ["Lahore", "Faisalabad", "Rawalpindi", "Multan", "Gujranwala", "Sialkot", "Bahawalpur", "Sargodha"]
+    },
+    {
+      "province": "Sindh",
+      "cities": ["Karachi", "Hyderabad", "Sukkur", "Larkana", "Nawabshah", "Mirpurkhas"]
+    },
+    {
+      "province": "Khyber Pakhtunkhwa",
+      "cities": ["Peshawar", "Mardan", "Abbottabad", "Swat", "Kohat", "Dera Ismail Khan"]
+    },
+    {
+      "province": "Balochistan",
+      "cities": ["Quetta", "Gwadar", "Turbat", "Khuzdar", "Chaman"]
+    },
+    {
+      "province": "Islamabad Capital Territory",
+      "cities": ["Islamabad"]
+    }
+  ],
+  "marketData": {
+    "eggs": {
+      "price": 280,
+      "unit": "perDozen",
+      "trend": "up",
+      "change": "+5%",
+      "image": "https://images.pexels.com/photos/1556707/pexels-photo-1556707.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "chicken": {
+      "price": 420,
+      "unit": "perKg",
+      "trend": "down",
+      "change": "-3%",
+      "image": "https://images.pexels.com/photos/5231290/pexels-photo-5231290.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "chicks": {
+      "price": 85,
+      "unit": "per100",
+      "trend": "stable",
+      "change": "0%",
+      "image": "https://images.pexels.com/photos/1202238/pexels-photo-1202238.jpeg?auto=compress&cs=tinysrgb&w=600"
+    }
+  },
+  "services": [
+    {
+      "key": "farmers",
+      "icon": "Users",
+      "count": "15,240",
+      "image": "https://images.pexels.com/photos/1556665/pexels-photo-1556665.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "color": "from-orange-500 to-red-600"
+    },
+    {
+      "key": "wholesalers",
+      "icon": "Package",
+      "count": "4,850",
+      "image": "https://images.pexels.com/photos/1556707/pexels-photo-1556707.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "color": "from-blue-500 to-indigo-600"
+    },
+    {
+      "key": "traders",
+      "icon": "TrendingUp",
+      "count": "2,560",
+      "image": "https://images.pexels.com/photos/5231290/pexels-photo-5231290.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "color": "from-green-500 to-emerald-600"
+    },
+    {
+      "key": "pharma",
+      "icon": "Pill",
+      "count": "380",
+      "image": "https://images.pexels.com/photos/208512/pexels-photo-208512.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "color": "from-purple-500 to-pink-600"
+    },
+    {
+      "key": "feed",
+      "icon": "Wheat",
+      "count": "620",
+      "image": "https://images.pexels.com/photos/2280545/pexels-photo-2280545.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "color": "from-yellow-500 to-orange-600"
+    },
+    {
+      "key": "transport",
+      "icon": "Truck",
+      "count": "850",
+      "image": "https://images.pexels.com/photos/1115175/pexels-photo-1115175.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "color": "from-red-500 to-rose-600"
+    }
+  ],
+  "featuredSuppliers": [
+    {
+      "name": "Premium Farms Ltd",
+      "type": "Broiler Farm",
+      "rating": 4.9,
+      "image": "https://images.pexels.com/photos/1556665/pexels-photo-1556665.jpeg?auto=compress&cs=tinysrgb&w=400"
+    },
+    {
+      "name": "Quality Eggs Co",
+      "type": "Layer Farm",
+      "rating": 4.8,
+      "image": "https://images.pexels.com/photos/1556707/pexels-photo-1556707.jpeg?auto=compress&cs=tinysrgb&w=400"
+    },
+    {
+      "name": "Elite Poultry Supplies",
+      "type": "Feed Supplier",
+      "rating": 4.7,
+      "image": "https://images.pexels.com/photos/2280545/pexels-photo-2280545.jpeg?auto=compress&cs=tinysrgb&w=400"
+    }
+  ],
+  "educationTopics": [
+    {
+      "key": "diseaseManagement",
+      "icon": "Stethoscope",
+      "image": "https://images.pexels.com/photos/5231290/pexels-photo-5231290.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "color": "from-red-500 to-orange-500"
+    },
+    {
+      "key": "farmingPractices",
+      "icon": "BookOpen",
+      "image": "https://images.pexels.com/photos/1556665/pexels-photo-1556665.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "color": "from-green-500 to-emerald-500"
+    },
+    {
+      "key": "marketIntelligence",
+      "icon": "TrendingUp",
+      "image": "https://images.pexels.com/photos/1556707/pexels-photo-1556707.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "color": "from-blue-500 to-indigo-500"
+    }
+  ],
+  "mobileAppFeatures": [
+    {
+      "key": "realtimeRates",
+      "icon": "TrendingUp"
+    },
+    {
+      "key": "directOrdering",
+      "icon": "Smartphone"
+    },
+    {
+      "key": "messaging",
+      "icon": "MessageCircle"
+    },
+    {
+      "key": "analytics",
+      "icon": "BarChart3"
+    }
+  ],
+  "stats": {
+    "farmersRegistered": "15,000+",
+    "tradersRegistered": "2,500+",
+    "transportRegistered": "850+",
+    "dailyTransactions": "50K+"
+  }
+}

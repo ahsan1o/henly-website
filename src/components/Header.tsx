@@ -1,0 +1,176 @@
+import { Menu, X, ChevronDown, Bird } from 'lucide-react';
+import { useState } from 'react';
+import { translations } from '../translations';
+
+interface HeaderProps {
+  language: 'en' | 'ur';
+  setLanguage: (lang: 'en' | 'ur') => void;
+}
+
+export default function Header({ language, setLanguage }: HeaderProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const t = translations[language];
+  const isUrdu = language === 'ur';
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'ur' : 'en');
+  };
+
+  return (
+    <>
+      {/* Live Ticker */}
+      <div className="bg-[#7a0000] text-white py-2 overflow-hidden">
+        <div className="animate-scroll whitespace-nowrap text-sm">
+          <span className={isUrdu ? 'font-urdu' : ''}>
+            🥚 {isUrdu ? 'انڈے' : 'Eggs'}: PKR 280/{isUrdu ? 'درجن' : 'dozen'} ↑
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            🐔 {isUrdu ? 'مرغی' : 'Chicken'}: PKR 420/{isUrdu ? 'کلو' : 'kg'} ↓
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            🐣 {isUrdu ? 'چوزے' : 'Chicks'}: PKR 85/{isUrdu ? 'فی چوزہ' : 'each'} →
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            📊 {isUrdu ? 'کراچی، لاہور، اسلام آباد میں تازہ ترین قیمتیں' : 'Latest rates in Karachi, Lahore, Islamabad'}
+          </span>
+        </div>
+      </div>
+
+      {/* Main Header */}
+      <header className="bg-gradient-to-r from-gray-50 to-white shadow-md sticky top-0 z-50 border-b-2 border-red-100 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            {/* Logo */}
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <div className="absolute inset-0 bg-red-600 opacity-10 rounded-2xl blur-xl"></div>
+                <img
+                  src="/assets/images/logo.png"
+                  alt="Henly Logo"
+                  className="h-20 w-auto relative z-10 transition-transform hover:scale-105 duration-300"
+                />
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="text-sm text-red-600 font-bold tracking-widest uppercase bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">Smart Poultry, Anytime</span>
+              </div>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className={`hidden lg:flex items-center space-x-2 ${isUrdu ? 'font-urdu' : ''}`} dir={isUrdu ? 'rtl' : 'ltr'}>
+              <a href="#home" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
+                {t.home}
+              </a>
+              <a href="#market-rates" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
+                {t.marketRates}
+              </a>
+              <a href="#farmers" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
+                {t.farmers}
+              </a>
+
+              {/* More Dropdown */}
+              <div className="relative" onMouseLeave={() => setIsMoreOpen(false)}>
+                <button
+                  onMouseEnter={() => setIsMoreOpen(true)}
+                  onClick={() => setIsMoreOpen(!isMoreOpen)}
+                  className="px-5 py-2.5 flex items-center gap-2 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]"
+                >
+                  <span>{isUrdu ? 'مزید' : 'More'}</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMoreOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {isMoreOpen && (
+                  <div className="absolute top-full left-0 mt-2 bg-white shadow-2xl rounded-xl py-2 min-w-[240px] border border-gray-100 z-50 animate-fadeIn">
+                    <a href="#wholesalers" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                      {t.wholesalers}
+                    </a>
+                    <a href="#traders" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                      {t.traders}
+                    </a>
+                    <a href="#pharma" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                      {isUrdu ? 'فارما اور فیڈ' : 'Pharma & Feed'}
+                    </a>
+                    <a href="#transporters" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                      {isUrdu ? 'ٹرانسپورٹر' : 'Transporters'}
+                    </a>
+                    <a href="#news" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                      {t.news}
+                    </a>
+                    <a href="#contact" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                      {t.contact}
+                    </a>
+                  </div>
+                )}
+              </div>
+            </nav>
+
+            {/* Right Side Actions */}
+            <div className="flex items-center gap-6">
+              {/* Language Toggle */}
+              <button
+                onClick={toggleLanguage}
+                className="px-4 py-2 bg-white border-2 border-gray-200 rounded-full hover:border-red-600 transition-all text-sm font-bold shadow-sm hover:shadow-md"
+              >
+                <span className={language === 'en' ? 'text-red-600' : 'text-gray-600'}>{isUrdu ? 'EN' : 'EN'}</span>
+                <span className="mx-2 text-gray-300">|</span>
+                <span className={language === 'ur' ? 'text-red-600' : 'text-gray-600'}>اردو</span>
+              </button>
+
+              {/* Auth Buttons - Desktop */}
+              <div className="hidden lg:flex items-center gap-3">
+                <a href="#signin" className={`px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all font-semibold text-[15px] ${isUrdu ? 'font-urdu' : ''}`}>
+                  {t.signIn}
+                </a>
+                <button className={`px-7 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full hover:from-red-700 hover:to-red-800 hover:shadow-xl transition-all duration-300 font-bold text-sm transform hover:scale-105 ${isUrdu ? 'font-urdu' : ''}`}>
+                  {t.downloadApp}
+                </button>
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="lg:hidden p-2.5 rounded-lg hover:bg-red-50 transition-colors border-2 border-transparent hover:border-red-200"
+              >
+                {isMenuOpen ? <X className="w-6 h-6 text-red-600" /> : <Menu className="w-6 h-6 text-gray-700" />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className={`md:hidden bg-white border-t ${isUrdu ? 'font-urdu' : ''}`} dir={isUrdu ? 'rtl' : 'ltr'}>
+            <div className="px-4 py-4 space-y-3">
+              <a href="#home" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+                {t.home}
+              </a>
+              <a href="#market-rates" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+                {t.marketRates}
+              </a>
+              <a href="#farmers" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+                {t.farmers}
+              </a>
+              <a href="#wholesalers" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+                {t.wholesalers}
+              </a>
+              <a href="#traders" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+                {t.traders}
+              </a>
+              <a href="#news" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+                {t.news}
+              </a>
+              <a href="#contact" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+                {t.contact}
+              </a>
+              <div className="pt-4 space-y-2">
+                <button className={`w-full py-2 border-2 border-[#8b0000] text-[#8b0000] rounded-lg hover:bg-[#8b0000] hover:text-white transition-all font-medium ${isUrdu ? 'font-urdu' : ''}`}>
+                  {t.signIn}
+                </button>
+                <button className={`w-full py-2 bg-[#8b0000] text-white rounded-lg hover:bg-[#7a0000] transition-all font-medium ${isUrdu ? 'font-urdu' : ''}`}>
+                  {t.downloadApp}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </header>
+    </>
+  );
+}
