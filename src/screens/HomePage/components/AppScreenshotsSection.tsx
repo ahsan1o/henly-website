@@ -66,11 +66,6 @@ export default function AppScreenshotsSection({ language }: AppScreenshotsSectio
           </div>
         ) : (
           <div className="relative">
-            {/* Background rotating reflection */}
-            <div className="pointer-events-none absolute -inset-x-10 -top-24 -bottom-24 opacity-30">
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] aspect-square rounded-full bg-gradient-to-tr from-[#8b0000]/20 via-white/5 to-[#8b0000]/10 blur-3xl animate-spin-slow"></div>
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] aspect-square rounded-full bg-gradient-to-bl from-white/10 via-transparent to-white/10 blur-2xl animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '60s' }}></div>
-            </div>
             {/* Carousel */}
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex -mx-3 md:-mx-2">
@@ -80,7 +75,7 @@ export default function AppScreenshotsSection({ language }: AppScreenshotsSectio
                     className="px-3 md:px-2 basis-full md:basis-1/2 lg:basis-1/3 flex-shrink-0 min-w-0"
                     style={{ animationDelay: `${Math.min(idx, 5) * 60}ms` }}
                   >
-                    <div className="group relative rounded-2xl p-2 bg-white/60 backdrop-blur-sm border border-white/40 shadow-sm hover:shadow-2xl transition-all duration-300 animate-fade-up">
+                    <div className="group relative rounded-2xl p-2 bg-gradient-to-b from-gray-50 to-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 animate-fade-up">
                       {/* Device-like frame */}
                       <div className="relative rounded-xl overflow-hidden bg-white">
                         <img
@@ -89,8 +84,10 @@ export default function AppScreenshotsSection({ language }: AppScreenshotsSectio
                           className="w-full aspect-[9/19] object-contain bg-white group-hover:scale-[1.01] transition-transform duration-300"
                           loading="lazy"
                         />
-                        {/* Shine sweep */}
-                        <div className="shine" />
+                        {/* Glow on hover */}
+                        <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="absolute -inset-8 bg-gradient-to-tr from-[#8b0000]/10 via-transparent to-[#8b0000]/10 blur-2xl"></div>
+                        </div>
                       </div>
                     </div>
                   </div>

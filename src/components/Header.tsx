@@ -2,6 +2,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { translations } from '../translations';
+import headerLogo from '../../assets/images/logo.png';
 
 interface HeaderProps {
   language: 'en' | 'ur';
@@ -45,7 +46,7 @@ export default function Header({ language, setLanguage }: HeaderProps) {
               <Link to="/#home" className="relative block" aria-label="Go to Home">
                 <div className="absolute inset-0 bg-red-600 opacity-10 rounded-2xl blur-xl"></div>
                 <img
-                  src="/assets/images/logo.png"
+                  src={headerLogo}
                   alt="Henly Logo"
                   className="h-20 w-auto relative z-10 transition-transform hover:scale-105 duration-300"
                 />

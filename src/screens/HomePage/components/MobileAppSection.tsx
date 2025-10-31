@@ -1,6 +1,10 @@
 import { Smartphone, TrendingUp, MessageCircle, BarChart3, Download, Star } from 'lucide-react';
 import { translations } from '../../../translations';
 import contentData from '../../../../assets/data/content.json';
+import sectionLogo from '../../../../assets/images/logoForSection.png';
+import screen1 from '../../../../assets/images/screenshots/screen-1.png';
+import screen2 from '../../../../assets/images/screenshots/screen-2.png';
+import screen3 from '../../../../assets/images/screenshots/screen-3.png';
 
 interface MobileAppProps {
   language: 'en' | 'ur';
@@ -127,7 +131,7 @@ export default function MobileApp({ language }: MobileAppProps) {
                     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-3 mb-3">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 rounded-2xl border border-gray-200 bg-white overflow-hidden flex items-center justify-center">
-                          <img src="/assets/images/logoForSection.png" alt="Henly icon" className="w-10 h-10 object-contain" />
+                          <img src={sectionLogo} alt="Henly icon" className="w-10 h-10 object-contain" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="text-sm font-bold text-gray-900 truncate">Henly</div>
@@ -155,13 +159,13 @@ export default function MobileApp({ language }: MobileAppProps) {
                     {/* Mini screenshot row */}
                     <div className="flex gap-2">
                       <div className="flex-1 h-44 md:h-56 lg:h-64 rounded-xl overflow-hidden bg-gray-100 border border-gray-200">
-                        <img src="/assets/images/screenshots/screen-1.png" alt="Shot 1" className="w-full h-full object-cover" />
+                        <img src={screen1} alt="Shot 1" className="w-full h-full object-cover" />
                       </div>
                         <div className="flex-1 h-44 md:h-56 lg:h-64 rounded-xl overflow-hidden bg-gray-100 border border-gray-200">
-                        <img src="/assets/images/screenshots/screen-2.png" alt="Shot 2" className="w-full h-full object-cover" />
+                        <img src={screen2} alt="Shot 2" className="w-full h-full object-cover" />
                       </div>
                         <div className="flex-1 h-44 md:h-56 lg:h-64 rounded-xl overflow-hidden bg-gray-100 border border-gray-200">
-                        <img src="/assets/images/screenshots/screen-3.png" alt="Shot 3" className="w-full h-full object-cover" />
+                        <img src={screen3} alt="Shot 3" className="w-full h-full object-cover" />
                       </div>
                     </div>
                   </div>

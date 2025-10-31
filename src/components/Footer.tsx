@@ -1,6 +1,7 @@
 import { Mail, Phone, Facebook, Twitter, Instagram, Linkedin, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { translations } from '../translations';
+import footerLogo from '../../assets/images/logo.png';
 
 interface FooterProps {
   language: 'en' | 'ur';
@@ -19,7 +20,7 @@ export default function Footer({ language }: FooterProps) {
             <Link to="/#home" className="relative inline-block mb-4" aria-label="Go to Home">
               <div className="absolute inset-0 bg-red-600 opacity-10 rounded-xl blur-lg"></div>
               <img
-                src="/assets/images/logo.png"
+                src={footerLogo}
                 alt="Henly Logo"
                 className="h-12 w-auto relative z-10"
               />
