@@ -108,7 +108,7 @@ export default function MobileApp({ language }: MobileAppProps) {
 
           {/* Phone Mockup */}
           <div className={`relative ${isUrdu ? 'lg:order-1' : ''}`}>
-            <div className="relative mx-auto w-64 md:w-80">
+            <div className="relative mx-auto w-80 md:w-[100rem] lg:w-[34rem]">
               {/* Phone Frame */}
               <div className="relative bg-gray-900 rounded-[3rem] p-3 shadow-2xl border-8 border-gray-800">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden">
@@ -117,37 +117,53 @@ export default function MobileApp({ language }: MobileAppProps) {
 
                   {/* Screen Content */}
                   <div className="bg-gradient-to-b from-gray-50 to-white p-4">
-                    <img
-                      src="/final-01.jpg"
-                      alt="Henly App"
-                      className="h-8 mb-4"
-                    />
-
-                    {/* Mock Market Rates */}
-                    <div className="bg-white rounded-2xl shadow-lg p-4 mb-3">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-gray-600 text-xs">Eggs</span>
-                        <span className="text-green-600 text-xs font-bold">↑ +5%</span>
-                      </div>
-                      <div className="text-[#8b0000] text-2xl font-bold">PKR 280</div>
-                      <div className="text-gray-500 text-xs">Per Dozen</div>
+                    {/* App Store style header */}
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[10px] font-semibold text-gray-500 tracking-wider">{isUrdu ? 'ایپ اسٹور' : 'APP STORE'}</span>
+                      <span className="text-[10px] text-gray-400">{isUrdu ? 'آج' : 'Today'}</span>
                     </div>
 
-                    <div className="bg-white rounded-2xl shadow-lg p-4 mb-3">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-gray-600 text-xs">Chicken</span>
-                        <span className="text-red-600 text-xs font-bold">↓ -3%</span>
+                    {/* App card */}
+                    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-3 mb-3">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 rounded-2xl border border-gray-200 bg-white overflow-hidden flex items-center justify-center">
+                          <img src="/assets/images/logoForSection.png" alt="Henly icon" className="w-10 h-10 object-contain" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-sm font-bold text-gray-900 truncate">Henly</div>
+                          <div className="text-[11px] text-gray-500 truncate">{isUrdu ? 'پولٹری مارکیٹ پلیس' : 'Poultry Marketplace'}</div>
+                        </div>
+                        <button className="px-3 py-1.5 text-[11px] font-bold rounded-full bg-[#8b0000] text-white hover:bg-[#7a0000] transition-colors">
+                          {isUrdu ? 'حاصل کریں' : 'GET'}
+                        </button>
                       </div>
-                      <div className="text-[#8b0000] text-2xl font-bold">PKR 420</div>
-                      <div className="text-gray-500 text-xs">Per Kg</div>
+
+                      <div className="mt-3 flex items-center gap-6 text-[11px] text-gray-600">
+                        <div className="flex items-center gap-1">
+                          <span className="font-semibold text-gray-900">4.8</span>
+                          <span>•</span>
+                          <span>{isUrdu ? 'درجہ بندی' : 'Ratings'}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="font-semibold text-gray-900">50K+</span>
+                          <span>{t.downloads}</span>
+                        </div>
+                        <div className="ml-auto text-[10px] text-gray-400">{isUrdu ? 'عمر 4+' : 'Age 4+'}</div>
+                      </div>
                     </div>
 
-                    {/* Mock Image */}
-                    <img
-                      src="https://images.pexels.com/photos/1556707/pexels-photo-1556707.jpeg?auto=compress&cs=tinysrgb&w=400"
-                      alt="Poultry"
-                      className="w-full h-32 object-cover rounded-xl"
-                    />
+                    {/* Mini screenshot row */}
+                    <div className="flex gap-2">
+                      <div className="flex-1 h-44 md:h-56 lg:h-64 rounded-xl overflow-hidden bg-gray-100 border border-gray-200">
+                        <img src="/assets/images/screenshots/screen-1.png" alt="Shot 1" className="w-full h-full object-cover" />
+                      </div>
+                        <div className="flex-1 h-44 md:h-56 lg:h-64 rounded-xl overflow-hidden bg-gray-100 border border-gray-200">
+                        <img src="/assets/images/screenshots/screen-2.png" alt="Shot 2" className="w-full h-full object-cover" />
+                      </div>
+                        <div className="flex-1 h-44 md:h-56 lg:h-64 rounded-xl overflow-hidden bg-gray-100 border border-gray-200">
+                        <img src="/assets/images/screenshots/screen-3.png" alt="Shot 3" className="w-full h-full object-cover" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1,2 +1,3 @@
-Note: Please upload your Henly logo (final-01.jpg) to the public/ directory.
-The logo should show the stylized rooster design with "Smart Poultry, Anytime" tagline.
+Note: The Header and Footer use /assets/images/logo.png.
+Please place your final logo at assets/images/logo.png (preferably also assets/images/logo.svg).
+The tagline is rendered in code and is currently removed from the UI; do not bake it into the image.

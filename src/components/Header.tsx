@@ -1,6 +1,6 @@
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { translations } from '../translations';
 
 interface HeaderProps {
@@ -42,30 +42,27 @@ export default function Header({ language, setLanguage }: HeaderProps) {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <div className="flex items-center gap-4">
-              <div className="relative">
+              <Link to="/#home" className="relative block" aria-label="Go to Home">
                 <div className="absolute inset-0 bg-red-600 opacity-10 rounded-2xl blur-xl"></div>
                 <img
                   src="/assets/images/logo.png"
                   alt="Henly Logo"
                   className="h-20 w-auto relative z-10 transition-transform hover:scale-105 duration-300"
                 />
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="text-sm text-red-600 font-bold tracking-widest uppercase bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">Smart Poultry, Anytime</span>
-              </div>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
             <nav className={`hidden lg:flex items-center space-x-2 ${isUrdu ? 'font-urdu' : ''}`} dir={isUrdu ? 'rtl' : 'ltr'}>
-              <a href="#home" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
+              <Link to="/#home" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
                 {t.home}
-              </a>
-              <a href="#market-rates" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
+              </Link>
+              <Link to="/#market-rates" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
                 {t.marketRates}
-              </a>
-              <a href="#farmers" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
+              </Link>
+              <Link to="/#services" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
                 {t.farmers}
-              </a>
+              </Link>
 
               {/* More Dropdown */}
               <div className="relative" onMouseLeave={() => setIsMoreOpen(false)}>
@@ -80,21 +77,21 @@ export default function Header({ language, setLanguage }: HeaderProps) {
 
                 {isMoreOpen && (
                   <div className="absolute top-full left-0 mt-2 bg-white shadow-2xl rounded-xl py-2 min-w-[240px] border border-gray-100 z-50 animate-fadeIn">
-                    <a href="#wholesalers" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                    <Link to="/#services" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
                       {t.wholesalers}
-                    </a>
-                    <a href="#traders" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                    </Link>
+                    <Link to="/#services" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
                       {t.traders}
-                    </a>
-                    <a href="#pharma" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                    </Link>
+                    <Link to="/#services" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
                       {isUrdu ? 'فارما اور فیڈ' : 'Pharma & Feed'}
-                    </a>
-                    <a href="#transporters" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                    </Link>
+                    <Link to="/#services" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
                       {isUrdu ? 'ٹرانسپورٹر' : 'Transporters'}
-                    </a>
-                    <a href="#news" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
+                    </Link>
+                    <Link to="/#education" className="block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2">
                       {t.news}
-                    </a>
+                    </Link>
                     <button
                       onClick={() => navigate('/contact')}
                       className="w-full text-left block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2"
@@ -133,9 +130,6 @@ export default function Header({ language, setLanguage }: HeaderProps) {
 
               {/* Auth Buttons - Desktop */}
               <div className="hidden lg:flex items-center gap-3">
-                <a href="#signin" className={`px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all font-semibold text-[15px] ${isUrdu ? 'font-urdu' : ''}`}>
-                  {t.signIn}
-                </a>
                 <button className={`px-7 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full hover:from-red-700 hover:to-red-800 hover:shadow-xl transition-all duration-300 font-bold text-sm transform hover:scale-105 ${isUrdu ? 'font-urdu' : ''}`}>
                   {t.downloadApp}
                 </button>
@@ -156,24 +150,24 @@ export default function Header({ language, setLanguage }: HeaderProps) {
         {isMenuOpen && (
           <div className={`md:hidden bg-white border-t ${isUrdu ? 'font-urdu' : ''}`} dir={isUrdu ? 'rtl' : 'ltr'}>
             <div className="px-4 py-4 space-y-3">
-              <a href="#home" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+              <Link to="/#home" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
                 {t.home}
-              </a>
-              <a href="#market-rates" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+              </Link>
+              <Link to="/#market-rates" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
                 {t.marketRates}
-              </a>
-              <a href="#farmers" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+              </Link>
+              <Link to="/#services" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
                 {t.farmers}
-              </a>
-              <a href="#wholesalers" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+              </Link>
+              <Link to="/#services" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
                 {t.wholesalers}
-              </a>
-              <a href="#traders" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+              </Link>
+              <Link to="/#services" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
                 {t.traders}
-              </a>
-              <a href="#news" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+              </Link>
+              <Link to="/#education" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
                 {t.news}
-              </a>
+              </Link>
               <button
                 onClick={() => navigate('/contact')}
                 className="block w-full text-left py-2 text-gray-700 hover:text-[#8b0000] font-medium"
@@ -193,9 +187,6 @@ export default function Header({ language, setLanguage }: HeaderProps) {
                 {isUrdu ? 'اکاؤنٹ حذفی' : 'Account Deletion'}
               </button>
               <div className="pt-4 space-y-2">
-                <button className={`w-full py-2 border-2 border-[#8b0000] text-[#8b0000] rounded-lg hover:bg-[#8b0000] hover:text-white transition-all font-medium ${isUrdu ? 'font-urdu' : ''}`}>
-                  {t.signIn}
-                </button>
                 <button className={`w-full py-2 bg-[#8b0000] text-white rounded-lg hover:bg-[#7a0000] transition-all font-medium ${isUrdu ? 'font-urdu' : ''}`}>
                   {t.downloadApp}
                 </button>

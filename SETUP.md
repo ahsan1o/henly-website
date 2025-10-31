@@ -80,11 +80,11 @@ npm run build
 
 **IMPORTANT**: Your Henly logo needs to be added!
 
-1. Take your logo file (`final-01.jpg`)
+1. Prepare your logo file (PNG or SVG)
 2. Copy it to the `public/` directory
 3. The logo will automatically appear in the header and footer
 
-Current logo path in code: `/final-01.jpg`
+Current logo path in code: `/assets/images/logo.png` (and optionally `/assets/images/logo.svg`)
 
 ## 🌍 Language Toggle
 

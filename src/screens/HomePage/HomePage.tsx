@@ -6,6 +6,7 @@ import MarketRatesSection from './components/MarketRatesSection';
 import MarketplaceSection from './components/MarketplaceSection';
 import EducationSection from './components/EducationSection';
 import MobileAppSection from './components/MobileAppSection';
+import AppScreenshotsSection from './components/AppScreenshotsSection';
 
 export default function HomePage() {
   const [language, setLanguage] = useState<'en' | 'ur'>('en');
@@ -19,6 +20,7 @@ export default function HomePage() {
         <MarketplaceSection language={language} />
         <EducationSection language={language} />
         <MobileAppSection language={language} />
+  <AppScreenshotsSection language={language} />
       </main>
       <Footer language={language} />
     </div>

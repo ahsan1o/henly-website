@@ -1,5 +1,5 @@
 import { Mail, Phone, Facebook, Twitter, Instagram, Linkedin, MapPin } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { translations } from '../translations';
 
 interface FooterProps {
@@ -7,7 +7,6 @@ interface FooterProps {
 }
 
 export default function Footer({ language }: FooterProps) {
-  const navigate = useNavigate();
   const t = translations[language];
   const isUrdu = language === 'ur';
 
@@ -17,11 +16,14 @@ export default function Footer({ language }: FooterProps) {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* About Section */}
           <div className={`md:col-span-2 ${isUrdu ? 'font-urdu' : ''}`} dir={isUrdu ? 'rtl' : 'ltr'}>
-            <img
-              src="/final-01.jpg"
-              alt="Henly Logo"
-              className="h-12 mb-4"
-            />
+            <Link to="/#home" className="relative inline-block mb-4" aria-label="Go to Home">
+              <div className="absolute inset-0 bg-red-600 opacity-10 rounded-xl blur-lg"></div>
+              <img
+                src="/assets/images/logo.png"
+                alt="Henly Logo"
+                className="h-12 w-auto relative z-10"
+              />
+            </Link>
             <p className="text-gray-400 leading-relaxed mb-4">
               {t.aboutDesc}
             </p>
@@ -38,48 +40,39 @@ export default function Footer({ language }: FooterProps) {
             <h3 className="text-lg font-bold mb-4 text-white">{t.quickLinks}</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-gray-400 hover:text-[#8b0000] transition-colors">
+                <Link to="/#home" className="text-gray-400 hover:text-[#8b0000] transition-colors">
                   {t.aboutUs}
-                </a>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => navigate('/contact')}
-                  className="text-gray-400 hover:text-[#8b0000] transition-colors cursor-pointer text-left"
-                >
+                <Link to="/contact" className="text-gray-400 hover:text-[#8b0000] transition-colors">
                   {t.contact}
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => navigate('/privacy')}
-                  className="text-gray-400 hover:text-[#8b0000] transition-colors cursor-pointer text-left"
-                >
+                <Link to="/privacy" className="text-gray-400 hover:text-[#8b0000] transition-colors">
                   {t.privacyPolicy}
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => navigate('/account-deletion')}
-                  className="text-gray-400 hover:text-[#8b0000] transition-colors cursor-pointer text-left"
-                >
+                <Link to="/account-deletion" className="text-gray-400 hover:text-[#8b0000] transition-colors">
                   {isUrdu ? 'اکاؤنٹ حذفی' : 'Account Deletion'}
-                </button>
+                </Link>
               </li>
               <li>
-                <a href="#terms" className="text-gray-400 hover:text-[#8b0000] transition-colors">
+                <Link to="/#home" className="text-gray-400 hover:text-[#8b0000] transition-colors">
                   {t.termsConditions}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#faq" className="text-gray-400 hover:text-[#8b0000] transition-colors">
+                <Link to="/#education" className="text-gray-400 hover:text-[#8b0000] transition-colors">
                   {t.faq}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#careers" className="text-gray-400 hover:text-[#8b0000] transition-colors">
+                <Link to="/#services" className="text-gray-400 hover:text-[#8b0000] transition-colors">
                   {t.careers}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
