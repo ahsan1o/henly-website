@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import AccountDeletionForm from './components/AccountDeletionForm';
+import SEO from '../../components/SEO';
 
 export default function AccountDeletion() {
   const [language, setLanguage] = useState<'en' | 'ur'>('en');
@@ -9,6 +10,13 @@ export default function AccountDeletion() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Delete Account | Henly Poultry Marketplace"
+        description="Request deletion of your Henly account. We care about your privacy and handle data removal securely."
+        url="https://henly.co/account-deletion"
+        canonical="https://henly.co/account-deletion"
+        robots="noindex, nofollow"
+      />
       <Header language={language} setLanguage={setLanguage} />
 
       <main>

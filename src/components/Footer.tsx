@@ -28,6 +28,9 @@ export default function Footer({ language }: FooterProps) {
             <p className="text-gray-400 leading-relaxed mb-4">
               {t.aboutDesc}
             </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              <Link to="/" className="underline hover:text-[#8b0000]">Henly Poultry</Link> — Pakistan's poultry marketplace for eggs, chicken, day-old chicks, feed and services.
+            </p>
             <div className="flex items-center gap-2 text-gray-400">
               <MapPin className="w-4 h-4" />
               <span className="text-sm">
@@ -48,6 +51,11 @@ export default function Footer({ language }: FooterProps) {
               <li>
                 <Link to="/contact" className="text-gray-400 hover:text-[#8b0000] transition-colors">
                   {t.contact}
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-gray-400 hover:text-[#8b0000] transition-colors">
+                  {isUrdu ? 'ہمارے بارے میں' : 'About'}
                 </Link>
               </li>
               <li>

@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import PrivacyPolicyContent from './components/PrivacyPolicyContent';
 import TableOfContents from './components/TableOfContents';
+import SEO from '../../components/SEO';
 
 export default function PrivacyPolicy() {
   const [language, setLanguage] = useState<'en' | 'ur'>('en');
@@ -11,6 +12,12 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Privacy Policy | Henly Poultry Marketplace"
+        description="Read Henly's privacy policy to understand how we collect, use, and protect your data on Pakistan's poultry marketplace."
+        url="https://henly.co/privacy"
+        canonical="https://henly.co/privacy"
+      />
       <Header language={language} setLanguage={setLanguage} />
       
       <main>

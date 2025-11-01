@@ -43,11 +43,11 @@ export default function Header({ language, setLanguage }: HeaderProps) {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <div className="flex items-center gap-4">
-              <Link to="/#home" className="relative block" aria-label="Go to Home">
+              <Link to="/#home" className="relative block" aria-label="Go to Home" title="Henly Poultry Marketplace Home">
                 <div className="absolute inset-0 bg-red-600 opacity-10 rounded-2xl blur-xl"></div>
                 <img
                   src={headerLogo}
-                  alt="Henly Logo"
+                  alt="Henly Poultry Marketplace logo"
                   className="h-20 w-auto relative z-10 transition-transform hover:scale-105 duration-300"
                 />
               </Link>
@@ -63,6 +63,9 @@ export default function Header({ language, setLanguage }: HeaderProps) {
               </Link>
               <Link to="/#services" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
                 {t.farmers}
+              </Link>
+              <Link to="/about" className="px-5 py-2.5 text-gray-800 hover:text-red-600 hover:bg-red-50 rounded-lg relative group transition-all font-semibold text-[15px]">
+                {isUrdu ? 'ہمارے بارے میں' : 'About'}
               </Link>
 
               {/* More Dropdown */}
@@ -98,6 +101,12 @@ export default function Header({ language, setLanguage }: HeaderProps) {
                       className="w-full text-left block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2"
                     >
                       {t.contact}
+                    </button>
+                    <button
+                      onClick={() => navigate('/about')}
+                      className="w-full text-left block px-6 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-all font-semibold rounded-lg mx-2"
+                    >
+                      {isUrdu ? 'ہمارے بارے میں' : 'About'}
                     </button>
                     <div className="border-t border-gray-100 my-2"></div>
                     <button
@@ -165,6 +174,9 @@ export default function Header({ language, setLanguage }: HeaderProps) {
               </Link>
               <Link to="/#services" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
                 {t.traders}
+              </Link>
+              <Link to="/about" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
+                {isUrdu ? 'ہمارے بارے میں' : 'About'}
               </Link>
               <Link to="/#education" className="block py-2 text-gray-700 hover:text-[#8b0000] font-medium">
                 {t.news}

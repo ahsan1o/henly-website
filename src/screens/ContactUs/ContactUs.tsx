@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ContactForm from './components/ContactForm';
 import ContactInfo from './components/ContactInfo';
+import SEO from '../../components/SEO';
 
 export default function ContactUs() {
   const [language, setLanguage] = useState<'en' | 'ur'>('en');
@@ -10,6 +11,12 @@ export default function ContactUs() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Contact Henly | Poultry Marketplace Support in Pakistan"
+        description="Contact Henly for support, partnerships, and inquiries about poultry market rates, suppliers, and services across Pakistan."
+        url="https://henly.co/contact"
+        canonical="https://henly.co/contact"
+      />
       <Header language={language} setLanguage={setLanguage} />
 
       <main>

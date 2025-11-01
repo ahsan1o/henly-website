@@ -7,12 +7,19 @@ import MarketplaceSection from './components/MarketplaceSection';
 import EducationSection from './components/EducationSection';
 import MobileAppSection from './components/MobileAppSection';
 import AppScreenshotsSection from './components/AppScreenshotsSection';
+import SEO from '../../components/SEO';
 
 export default function HomePage() {
   const [language, setLanguage] = useState<'en' | 'ur'>('en');
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Henly | Pakistan's Poultry Marketplace — Eggs, Chicken, Chicks & Feed"
+        description="Henly is Pakistan's leading poultry marketplace. Check daily egg, chicken and chicks rates for Karachi, Lahore, Islamabad, and connect with farmers, traders, and suppliers."
+        url="https://henly.co/"
+        canonical="https://henly.co/"
+      />
       <Header language={language} setLanguage={setLanguage} />
       <main>
         <HeroSection language={language} />
