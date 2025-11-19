@@ -1,0 +1,18 @@
+# Apache SPA fallback for Namecheap or similar shared hosting
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # Allow existing files and directories
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  # Fallback all other requests to index.html with 200
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Security headers (optional basic)
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

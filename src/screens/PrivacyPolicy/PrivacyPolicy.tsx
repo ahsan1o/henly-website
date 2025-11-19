@@ -17,6 +17,7 @@ export default function PrivacyPolicy() {
         description="Read Henly's privacy policy to understand how we collect, use, and protect your data on Pakistan's poultry marketplace."
         url="https://henly.co/privacy"
         canonical="https://henly.co/privacy"
+        robots="index,follow"
       />
       <Header language={language} setLanguage={setLanguage} />
       

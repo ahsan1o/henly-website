@@ -15,7 +15,7 @@ export default function AccountDeletion() {
         description="Request deletion of your Henly account. We care about your privacy and handle data removal securely."
         url="https://henly.co/account-deletion"
         canonical="https://henly.co/account-deletion"
-        robots="noindex, nofollow"
+        robots="index,follow"
       />
       <Header language={language} setLanguage={setLanguage} />
 
